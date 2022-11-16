@@ -1,0 +1,29 @@
+const User = require("../../schemas/user")
+const createError = require("http-errors")
+
+const lookupUser = async function (req, res, next) {
+  try {
+    const user = await User.findOne({
+      username: req.params.username
+    })
+
+    if (!user) {
+      return next(createError(404, "User not found"))
+    }
+
+    if (user._id.toString() !== req.token.userId) {
+      return next(createError(403, "Invalid token"))
+    }
+
+    req.userData = user
+    req.result = {
+      username: user.username,
+      decks: user.decks
+    }
+    next()
+  } catch (err) {
+    return next(createError(500, "Error looking up user"))
+  }
+}
+
+module.exports = lookupUser
