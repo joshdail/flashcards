@@ -3,26 +3,3 @@
 // 3. Create, upddte, and delete decks of flash cards
 // 4. Shuffle and review flash cards
 // 5. Light/dark modes
-
-/*
-MongoDB (?) Data Store
-
-User
-- ID
-- Username
-- Password
-- Decks
-
-Deck
-- ID
-- Author ID
-- Name
-- Cards
-
-Card
-- ID
-- Deck ID
-- Question
-- Answer
-
- */
