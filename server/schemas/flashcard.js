@@ -12,5 +12,9 @@ const flashcardSchema = new mongoose.Schema({
   deckId: {
     type: String,
     required: true
+  },
+  userId: {
+    type: String,
+    required: true
   }
 })

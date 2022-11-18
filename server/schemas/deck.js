@@ -7,7 +7,7 @@ const deckSchema = new mongoose.Schema({
   },
   userId: {
     type: String,
-    required: true1
+    required: true
   },
   flashcards: {
     type: [String],

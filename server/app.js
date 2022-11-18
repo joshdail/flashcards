@@ -9,6 +9,7 @@ const mongoose = require("mongoose")
 
 const users = require("./routes/users")
 const tokens = require("./routes/tokens")
+const decks = require("./routes/decks")
 
 const Token = require("./schemas/token.js")
 
@@ -22,6 +23,7 @@ app.use(bodyParser.json())
 
 app.use("/users", users)
 app.use("/tokens", tokens)
+app.use("/decks", decks)
 
 const server = app.listen(port, () => {
   console.log(`Listening on port ${port}`)

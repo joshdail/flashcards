@@ -15,7 +15,7 @@ const lookupUser = async function (req, res, next) {
       return next(createError(403, "Invalid token"))
     }
 
-    req.userData = user
+    req.user = user
     req.result = {
       username: user.username,
       decks: user.decks

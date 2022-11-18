@@ -5,7 +5,7 @@ const createError = require("http-errors")
 
 const sanitizeNewUserData = function (req, res, next) {
   const username =
-    typeof req.body.username === "string" && req.body.username.trim().length > 7
+    typeof req.body.username === "string" && req.body.username.trim().length > 1
       ? req.body.username.trim()
       : null
 
